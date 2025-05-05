@@ -1,0 +1,7 @@
+person_info_form.person_info:
+  path: '/person-info-form'
+  defaults:
+    _title: 'Person Info Form'
+    _form: 'Drupal\person_info_form\Form\PersonInfoForm'
+  requirements:
+    _permission: 'access content'
