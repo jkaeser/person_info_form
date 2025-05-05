@@ -1,30 +1,26 @@
-## INTRODUCTION
+# Person Info Form
 
-The Person Info Form module is a DESCRIBE_THE_MODULE_HERE.
+Coding exercise submission.
 
-The primary use case for this module is:
+- The form is available at `/person-info-form`.
+- If logged in, a list of form submissions is available at `/admin/content/person-info-form/submissions`.
 
-- Use case #1
-- Use case #2
-- Use case #3
+## Installation
 
-## REQUIREMENTS
-
-DESCRIBE_MODULE_DEPENDENCIES_HERE
-
-## INSTALLATION
-
-Install as you would normally install a contributed Drupal module.
-See: https://www.drupal.org/node/895232 for further information.
-
-## CONFIGURATION
-- Configuration step #1
-- Configuration step #2
-- Configuration step #3
-
-## MAINTAINERS
-
-Current maintainers for Drupal 10:
-
-- FIRST_NAME LAST_NAME (NICKNAME) - https://www.drupal.org/u/NICKNAME
-
+1. Add this module as a Composer dependency. In your `composer.json`:
+  ```php
+  {
+    "repositories": [
+      {
+        "type": "vcs",
+        "url": "https://github.com/jkaeser/person_info_form.git"
+      }
+    ]
+    "require": {
+      "jkaeser/person_info_form": "dev-main"
+    }
+  }
+  ```
+2. Run `composer update` to download the contents of the repository.
+    - Alternatively, you could just clone this repository into your `webroot/modules/custom` directory.
+3. Enable the module.
