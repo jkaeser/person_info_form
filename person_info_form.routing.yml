@@ -5,3 +5,11 @@ person_info_form.person_info:
     _form: 'Drupal\person_info_form\Form\PersonInfoForm'
   requirements:
     _permission: 'access content'
+
+person_info_form.admin_submissions:
+  path: '/admin/content/person-info-form/submissions'
+  defaults:
+    _controller: '\Drupal\person_info_form\Controller\PersonInfoFormAdminController::submissionsPage'
+    _title: 'Person Info Form Submissions'
+  requirements:
+    _permission: 'administer site configuration'

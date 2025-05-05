@@ -145,11 +145,28 @@ final class PersonInfoForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state): void {
-    $this->messenger()->addStatus($this->t('Thank you for signing up!'));
+    $this->messenger()->addStatus($this->t('Success! Thank you for your submission.'));
+
+    // Log form submission.
     $this->logger('person_info_form')->info($this->t(
       'Submission received: %submission'),
       ['%submission' => json_encode($form_state->getValues())]
     );
+
+    // Store form submission.
+    $connection = \Drupal::database();
+    $connection->insert('person_info_form_submissions')
+      ->fields([
+        'name_first' => $form_state->getValue('name_first'),
+        'name_last' => $form_state->getValue('name_last'),
+        'email' => $form_state->getValue('email'),
+        'phone_type' => $form_state->getValue('phone_type'),
+        'phone_number' => $form_state->getValue('phone_number'),
+        'consent_sms' => (int) $form_state->getValue('consent_sms'),
+        'colors_favorite' => implode(',', $form_state->getValue('colors_favorite')),
+        'created' => \Drupal::time()->getRequestTime(),
+      ])
+      ->execute();
   }
 
 }
