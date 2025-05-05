@@ -1,0 +1,27 @@
+core:
+  js:
+    js/multiselect.js: {}
+  css:
+    theme:
+      css/styles.css: {}
+  dependencies:
+    - person_info_form/select2
+
+select2:
+  remote: https://select2.org/
+  version: 4.1.0
+  license:
+    name: MIT
+    url: https://github.com/select2/select2/blob/master/LICENSE.md
+    gpl-compatible: true
+  css:
+    component:
+      https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css: {}
+      css/select2-overrides.css: {}
+  js:
+    https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js: {
+      type: external,
+      minified: true,
+    }
+  dependencies:
+    - core/jquery

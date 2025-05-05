@@ -23,6 +23,31 @@ final class PersonInfoForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state): array {
+    $class_base = $form['#attributes']['class'][0];
+
+    $form['header'] = [
+      '#type' => 'container',
+      '#attributes' => [
+        'class' => $class_base . '__header',
+      ],
+    ];
+
+    $form['header']['heading'] = [
+      '#type' => 'html_tag',
+      '#tag' => 'h2',
+      '#value' => $this->t('Sign Up'),
+      '#attributes' => [
+        'class' => $class_base . '__heading',
+      ],
+    ];
+    $form['header']['subheading'] = [
+      '#type' => 'html_tag',
+      '#tag' => 'div',
+      '#value' => $this->t('Enter your credentials'),
+      '#attributes' => [
+        'class' => $class_base . '__subheading',
+      ],
+    ];
 
     $form['name_first'] = [
       '#type' => 'textfield',
@@ -97,6 +122,8 @@ final class PersonInfoForm extends FormBase {
         '#value' => $this->t('Submit'),
       ],
     ];
+
+    $form['#attached']['library'][] = 'person_info_form/core';
 
     return $form;
   }
