@@ -1,16 +1,18 @@
 'use strict';
 
 /**
- * @file Enables tagged-style multiselect on selected fields.
+ * @file Enables tagged-style multiselect on multi-select fields.
  */
 
 ((Drupal, $) => {
 
   Drupal.behaviors.personInfoFormMultiselect = {
     attach: (context) => {
-      const colorsSelect = $('#edit-colors-favorite', context);
-      colorsSelect.select2();
+      const colorsSelect = once('personInfoFormMultiselect', $('.form-select[multiple]', context));
+      colorsSelect.forEach(el => {
+        $(el).select2()
+      });
     }
   }
 
-})(Drupal, jQuery);
+})(Drupal, jQuery, once);

@@ -6,6 +6,8 @@ core:
       css/styles.css: {}
   dependencies:
     - person_info_form/select2
+    - core/drupal
+    - core/once
 
 select2:
   remote: https://select2.org/
