@@ -36,6 +36,7 @@
   ) {
     color: var(--color-neutral-black-100);
     inline-size: 100%;
+    max-inline-size: 100%;
     background-color: var(--color-neutral-gray);
     height: unset;
     min-height: unset;
