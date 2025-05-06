@@ -1,5 +1,5 @@
 name: 'Person Info Form'
 type: module
 description: 'Provides a sign up form for users.'
-package: Custom
+package: Forms
 core_version_requirement: ^10 || ^11
