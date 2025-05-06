@@ -76,6 +76,7 @@
 
 
   & .select2-results__option {
+    font-family: 'ABeeZee', sans-serif;
     background-color: var(--color-neutral-white-100);
   }
 
