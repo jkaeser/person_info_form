@@ -119,6 +119,8 @@
     border: none;
     font-weight: 400;
     text-align: center;
+    display: inline-flex;
+    justify-content: center;
     transition: all 0.2s ease;
     margin: 0;
 
