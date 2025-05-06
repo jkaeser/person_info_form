@@ -9,7 +9,7 @@ person_info_form.person_info:
 person_info_form.admin_submissions:
   path: '/admin/content/person-info-form/submissions'
   defaults:
-    _controller: '\Drupal\person_info_form\Controller\PersonInfoFormAdminController::submissionsPage'
+    _controller: '\Drupal\person_info_form\Controller\PersonInfoFormAdminController::renderSubmissions'
     _title: 'Person Info Form Submissions'
   requirements:
     _permission: 'administer site configuration'

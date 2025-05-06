@@ -36,19 +36,7 @@ class PersonInfoFormAdminController extends ControllerBase {
   /**
    * Returns a render array for the submissions admin page.
    */
-  public function submissionsPage() {
-    $header = [
-      ['data' => $this->t('ID')],
-      ['data' => $this->t('First Name')],
-      ['data' => $this->t('Last Name')],
-      ['data' => $this->t('Email')],
-      ['data' => $this->t('Phone Type')],
-      ['data' => $this->t('Phone Number')],
-      ['data' => $this->t('Consent to Receive SMS Messages')],
-      ['data' => $this->t('Favorite Color(s)')],
-      ['data' => $this->t('Created')],
-    ];
-
+  public function renderSubmissions() {
     $query = $this->database->select('person_info_form_submissions', 'p')
       ->fields('p', [
         'id',
@@ -81,7 +69,17 @@ class PersonInfoFormAdminController extends ControllerBase {
 
     return [
       '#type' => 'table',
-      '#header' => $header,
+      '#header' => [
+        ['data' => $this->t('ID')],
+        ['data' => $this->t('First Name')],
+        ['data' => $this->t('Last Name')],
+        ['data' => $this->t('Email')],
+        ['data' => $this->t('Phone Type')],
+        ['data' => $this->t('Phone Number')],
+        ['data' => $this->t('Consent to Receive SMS Messages')],
+        ['data' => $this->t('Favorite Color(s)')],
+        ['data' => $this->t('Created')],
+      ],
       '#rows' => $rows,
       '#empty' => $this->t('No submissions found.'),
     ];

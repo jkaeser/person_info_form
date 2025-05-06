@@ -3,7 +3,7 @@
 Coding exercise submission.
 
 - The form is available at `/person-info-form`.
-- If logged in, a list of form submissions is available at `/admin/content/person-info-form/submissions`.
+- If logged in as an admin, a list of form submissions is available at `/admin/content/person-info-form/submissions`.
 
 ## Installation
 
